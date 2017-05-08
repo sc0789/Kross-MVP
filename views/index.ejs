@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="videoMvpApp">
+<html ng-app="videoMvpApp"> 
   <head>
     <title>Video Clipping MVP</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -23,6 +23,7 @@
             </li>
           </ol>
         </td>
+        
         <td>
           <video ng-if="playAble" onended="angular.element(document.body).scope().playNext()" id="myVideo" width="320" height="176" autoplay controls poster="/images/video-poster.png">
             <source src="{{playAble}}" type="video/mp4">
