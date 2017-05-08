@@ -1,0 +1,27 @@
+.clips .clip-name{
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+#videoUrl{
+  width: 300px;
+}
+
+.clipping-time{
+  width: 60px;
+  text-align: center;
+}
+
+.clips .delete{
+  color: red;
+  cursor: pointer;
+}
+
+.clips .delete:hover{
+  text-decoration: underline;
+}
+
+.clips .edit-mode{
+  background: #e0e0e0;
+}
