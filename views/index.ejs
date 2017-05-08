@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="videoMvpApp">
+  <head>
+    <title>Video Clipping MVP</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="/javascripts/main.js"></script>
+  </head>
+  <body ng-controller="mainCtrl">
+    <table>
+      <tr>
+        <td colspan="2">
+          <input type="text" ng-model="videoUrl" id="videoUrl"/>
+          <button ng-click="loadVideo()">Load</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <ol class="clips">
+            <li ng-repeat="clip in clips track by $index" title="{{clip.url}}" class="{{currentActiveClip==$index ? 'edit-mode' : ''}}">
+              <span class="delete" ng-click="deleteClip($index)" ng-if="$index > 0">✖</span>
+              <span class="clip-name clip-index-{{$index}}" ng-click="playClips(clip.url,$index)">{{clip.name}}</span>
+            </li>
+          </ol>
+        </td>
+        <td>
+          <video ng-if="playAble" onended="angular.element(document.body).scope().playNext()" id="myVideo" width="320" height="176" autoplay controls poster="/images/video-poster.png">
+            <source src="{{playAble}}" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <br/>
+          <input type="text" ng-model="startTime" class="clipping-time" placeholder="MM:SS"/>
+          <input type="text" ng-model="endTime" class="clipping-time" placeholder="MM:SS"/>
+          <input type="text" ng-model="clipName" placeholder="Clipped file name"/>
+          <input type="button" value="{{currentActiveClip ? 'Update' : 'New clip'}}" ng-click="clipVideo()"/>
+          <input type="button" ng-if="currentActiveClip" value="Leave edit mode" ng-click="leaveEditMode()"/>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
