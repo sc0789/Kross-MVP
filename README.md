@@ -12,12 +12,12 @@ Mandatory Features
 
  
  
- 
- 
- 
  Start App
- 1) npm install
- 2) npm start or nodemon
+   1. npm install
+   2. npm start or nodemon
+   3. brew install ffmpeg
+
+   
  
  
  
