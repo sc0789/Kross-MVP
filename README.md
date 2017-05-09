@@ -10,7 +10,7 @@ Create an application that allows a user to slice-up a video into clips
       * Install and open keka(file unzipper)
       * Locate the one file named ffmpeg
       * In clip.js, provide the path to the ffmpeg file(ffmpeg.setFfmpegPath('INSERT PATH');
-   4. Open localhost:3000 in the browswer
+   4. Open localhost:3000 in the browser
 
    
  
